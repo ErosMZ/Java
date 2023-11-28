@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 public class LibreriaArrays {
     public static int[] generaArrayInt(int minimo, int maximo, int tamañoArray) {
         Random rd = new Random();
