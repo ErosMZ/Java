@@ -1,10 +1,12 @@
-package ejercicios.organigrama;
+package organigrama;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Organigrama {
     public static void main(String[] args) {
-        
+        Scanner scan = new Scanner(System.in);
+
         String [][]ArrayDatos  =  {
         {"1025", "Angel", "0", "0"},
         {"1066", "Victor", "2", "1749"},
@@ -35,6 +37,7 @@ public class Organigrama {
         {"1534", "Olga", "2", "1425"},
         {"1551", "Javier", "3", "1861"},
         {"1555", "Gisela", "3", "1517"},
+        {"1555", "eros", "3", "1517"},
         {"1564", "Karla", "3", "1298"},
         {"1577", "Tania", "4", "1564"},
         {"1591", "Nerea", "4", "1873"},
@@ -56,15 +59,26 @@ public class Organigrama {
         {"1973", "Quico", "4", "1465"},
         {"1986", "Carmen", "3", "1066"},
         {"1997", "Oscar", "3", "1861"}};
+        
+        System.out.print("Dime que usuario buscas: ");
+        String id = scan.nextLine();
+        System.out.print("Dime que nivel que quieres buscar: ");
+        String nivel = scan.nextLine();
 
         for(int a =0;a<ArrayDatos.length;a++){
             
             for(int b = 0;b<4;b++){
-               
-                System.out.print(ArrayDatos[a][b]+ ", ");
+            
+                if (ArrayDatos[a][0].equals(id)) {
+                    if (ArrayDatos[a][2].equals(nivel)) {
+                        System.out.println(ArrayDatos[a][1]);
+                    }else{
+                        
+                    }
+                }
                 
             }
-             System.out.println();
+             
         }
        
     }
