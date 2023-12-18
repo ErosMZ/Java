@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Organigrama {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scn = new Scanner(System.in);
 
         String [][]ArrayDatos  =  {
         {"1025", "Angel", "0", "0"},
@@ -61,22 +61,26 @@ public class Organigrama {
         {"1997", "Oscar", "3", "1861"}};
         
         System.out.print("Dime que usuario buscas: ");
-        String id = scan.nextLine();
+        String id = scn.nextLine();
         System.out.print("Dime que nivel que quieres buscar: ");
-        String nivel = scan.nextLine();
+        String nivel = scn.nextLine();
 
+        
         for(int a =0;a<ArrayDatos.length;a++){
             
             for(int b = 0;b<4;b++){
             
                 if (ArrayDatos[a][0].equals(id)) {
-                    if (ArrayDatos[a][2].equals(nivel)) {
-                        System.out.println(ArrayDatos[a][1]);
+                    
+                    if (!ArrayDatos[a][2].equals(nivel)) {
+                        id = ArrayDatos[a][3];
+                        a =0;
                     }else{
-                        
+                        System.out.println(ArrayDatos[a][1]);
+                        break;
                     }
+
                 }
-                
             }
              
         }
@@ -84,3 +88,4 @@ public class Organigrama {
     }
 
 }
+
