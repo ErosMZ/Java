@@ -64,7 +64,14 @@ public class Organigrama {
         String id = scn.nextLine();
         System.out.print("Dime que nivel que quieres buscar: ");
         String nivel = scn.nextLine();
-
+        
+        String nombreEmpleado= " ";
+        for(int a =0;a<ArrayDatos.length;a++){
+            if (ArrayDatos[a][0].equals(id)) {
+                nombreEmpleado = ArrayDatos[a][1];
+                
+            }
+        }
         
         for(int a =0;a<ArrayDatos.length;a++){
             
@@ -76,7 +83,12 @@ public class Organigrama {
                         id = ArrayDatos[a][3];
                         a =0;
                     }else{
-                        System.out.println(ArrayDatos[a][1]);
+                        System.out.println();
+                        System.out.println("Datos del jefe: "  );
+                        System.out.println("El código es "+ArrayDatos[a][0]);
+                        System.out.println("El nombre es "+ArrayDatos[a][1]);
+                        System.out.println();
+                        System.out.println("El nombre del empleado es: "+ nombreEmpleado);
                         break;
                     }
 
@@ -88,4 +100,3 @@ public class Organigrama {
     }
 
 }
-
